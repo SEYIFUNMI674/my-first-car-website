@@ -1,0 +1,255 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: black;
+  color: white;
+  /* width: 100%; */
+   min-height: 100vh;
+  overflow-x: hidden;
+  
+} 
+
+/* ================= NAVBAR ================= */
+.nav-bar {
+  position: fixed;
+   top: 0;
+  left: 0; 
+   width:100%;
+   padding: 15px ;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000; 
+  background-color: rgb(0, 102, 255);
+  max-width: 1500px;
+
+}
+
+.nav-bar img {
+  height: 60px;
+  width: auto;
+
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: rgb(0, 221, 255);
+}
+.toggle-menu{
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+/* nav-responsive mobile view*/
+@media(max-width:786px){
+  .nav-links{
+    display: none;
+    flex-direction: column;
+    background:rgb(0, 119, 255);
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    padding: 10px;
+    border-radius: 5px;
+  }
+}
+.nav-links.active{
+  display: flex;
+}
+.toggle-menu{
+  display: block;
+}
+
+/*ABOUT */
+#about {
+  margin-top: 80px; 
+  text-align: center;
+}
+
+#about img {
+  width: 100%;
+  max-width: 1200px;
+  height: auto;
+  border: none;
+  margin: 0 auto;
+}
+
+#about h1 {
+  color: rgb(0, 123, 255);
+  font-size: 50px;
+  padding-left: 0;
+  text-align: center;
+}
+
+#about h2 {
+  color: white;
+  margin-bottom: 15px;
+  padding-left: 0;
+  text-align: center;
+}
+
+#about p {
+  font-size: 15px;
+  max-width: 1200px;
+  margin: 0 auto;
+  line-height: 1.6;
+  text-align: justify;
+  font-family: sans-serif;
+  padding: 10px 15px;
+}
+
+#about button {
+  color: white;
+  background-color: blue;
+  border: none;
+  border-radius: 15px;
+  width: 200px;
+  height: 40px;
+  margin-top: 25px;
+  cursor: pointer;
+  justify-items: center; 
+   
+}
+#about button:hover {
+  background-color: rgb(96, 117, 120);
+}
+
+/*SERVICES  */
+.first-three, .second-three {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin: 40px auto;
+  max-width: 1200px;
+}
+
+.first-three > div, .second-three > div {
+  flex: 1 1 300px;  
+  background: #111;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.first-three img, .second-three img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+.first-three h2,
+.second-three h2{
+  color: rgb(0,221, 255);
+}
+.first-three ul,
+.second-three ul {
+  list-style: none;      
+  padding: 0;
+  margin: 15px 0 0 0;    
+  text-align: left;
+}
+
+.first-three ul li,
+.second-three ul li {
+  padding: 5px 0;
+  font-size: 16px;
+}
+
+
+/* CONTACT */
+.mycontact {
+  background: url(/images/corrollawash.png) no-repeat center/cover;
+  padding: 60px 20px;
+  color: white;
+}
+
+.contact-us {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+input, .sending {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  margin-bottom: 15px;
+}
+
+.sending {
+  height: 100px;
+}
+
+.button-s {
+  background-color: rgb(0, 102, 255);
+  color: white;
+  width: 100%;
+  max-width: 200px;
+  height: 50px;
+  border-radius: 10px;
+  border: none;
+  display: block;
+  margin: 20px auto;
+  cursor: pointer;
+}
+
+.button-s:hover {
+  background-color: rgb(0, 221, 255);
+}
+
+input::placeholder {
+  padding-left: 10px;
+}
+
+/*  RESPONSIVE */
+
+/*  Mobile 1 per row */
+ @media (max-width:600px) {
+  #about h1 {
+    font-size: 32px;
+  }
+  #about h2 {
+    font-size: 20px;
+  }
+  .first-three > div, .second-three > div {
+    flex: 1 1 100%;
+  }
+  
+} 
+
+/*  Tablet 2 per row */
+@media (min-width: 601px) and (max-width: 900px) {
+  .first-three > div, .second-three > div {
+    flex: 1 1 calc(50% - 20px); /* two per row */
+  }
+}
+
+/*  Desktop 3 per row */
+@media (min-width: 901px) {
+  .first-three > div, .second-three > div {
+    flex: 1 1 calc(33.333% - 20px);
+  }
+}
